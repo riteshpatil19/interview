@@ -11,7 +11,7 @@ import InterviewHistory from './pages/InterviewHistory'
 import Pricing from './pages/Pricing'
 import InterviewReport from './pages/InterviewReport'
 
-export const ServerUrl  = "http://localhost:5000"
+export const ServerUrl  = "https://interview-w0ua.onrender.com"
 
 function App() {
 
