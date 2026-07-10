@@ -18,7 +18,7 @@ export const analyzeResume = async (req, res) => {
 
     let resumeText = "";
 
-    // Extract text from all pages
+ 
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
       const page = await pdf.getPage(pageNum);
       const content = await page.getTextContent();
