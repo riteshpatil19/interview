@@ -66,10 +66,10 @@ function Pricing() {
       plan.id === "basic" ? 100 :
       plan.id === "pro" ? 500 : 0;
 
-      const result = await axios.post(ServerUrl + "/api/payment/order" , {
+      const result = await axios.post(ServerUrl + "/api/payment/create-order" , {
         planId: plan.id,
-        amount: amount,
-        credits: plan.credits,
+        // amount: amount,
+        // credits: plan.credits,
       },{withCredentials:true})
       
 
