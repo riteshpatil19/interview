@@ -109,25 +109,25 @@ function Step2Interview({ interviewData, onFinish }) {
       utterance.onstart = () => {
         setIsAIPlaying(true);
         stopMic()
-        videoRef.current?.play();
+        videoRef.current.play();
       };
 
 
       utterance.onend = () => {
-        videoRef.current?.pause();
-        videoRef.current.currentTime = 0;
-        setIsAIPlaying(false);
+          if (videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+          }
+          setIsAIPlaying(false);
 
-
-
-        if (isMicOn) {
-          startMic();
-        }
-        setTimeout(() => {
-          setSubtitle("");
-          resolve();
-        }, 300);
-      };
+          if (isMicOn) {
+            startMic();
+          }
+          setTimeout(() => {
+            setSubtitle("");
+            resolve();
+          }, 300);
+};
 
 
       setSubtitle(text);
